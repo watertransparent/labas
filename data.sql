@@ -11,4 +11,14 @@ insert into usr (first_name, middle_name, last_name, email) values
 ('Дмитрий', 'Андреевич', 'Двор', 'dvor@my.example.com'),
 ('Александра', 'Андреевна', 'Шуткина', 'shutkina@my.example.com'),
 ('Артем', 'Артемович', 'Артемов', 'artemov@my.example.com'),
-('Александр', 'Дмитриевич', 'Иванов', 'ivancov@my.example.com');
+('Александр', 'Дмитриевич', 'Иванов', 'ivancov@my.example.com'),
+('Валерий', 'Олегович', 'Олегов', 'oleg@my.example.com'),
+('Василий', 'Владимирович', 'Рукав', 'rukav@my.example.com'),
+('Владимир', 'Васильевич', 'Запястьев', 'zapyastiev@my.example.com'),
+('Виктор', 'Денисович', 'Зущенко', 'zushenko@my.example.com'),
+('Виктория', 'Денисовна', 'Прущенко', 'prushenko@my.example.com'),
+('Арам', 'Дмитриевич', 'Григорян', 'grigoryan@my.example.com'),
+('Даниил', 'Иванович', 'Григоров', 'grigorov@my.example.com'),
+('Николай', 'Олегович', 'Вердык', 'verdik@my.example.com'),
+('Никита', 'Сергеевич', 'Корыто', 'korito@my.example.com'),
+('Сергей', 'Андреевич', 'Булышев', 'bulishev@my.example.com');
