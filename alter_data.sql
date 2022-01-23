@@ -49,3 +49,65 @@ update usr set birth_date='2007-11-04 21:18:08' where id=21;
 update usr set birth_date='2008-04-01 22:07:08' where id=22;
 update usr set birth_date='2008-05-02 23:04:08' where id=23;
 alter table usr ALTER COLUMN birth_date SET NOT NULL;
+create table role (
+name varchar(20) not null,
+primary key (name)
+);
+insert into role (name) values
+('administrator'),
+('editor'),
+('user');
+alter table usr add column role_name varchar(20);
+update usr set role_name='administrator' where id=1;
+update usr set role_name='administrator' where id=2;
+update usr set role_name='editor' where id=3;
+update usr set role_name='editor' where id=4;
+update usr set role_name='editor' where id=5;
+update usr set role_name='editor' where id=6;
+update usr set role_name='editor' where id=7;
+update usr set role_name='editor' where id=8;
+update usr set role_name='editor' where id=9;
+update usr set role_name='user' where id=10;
+update usr set role_name='user' where id=11;
+update usr set role_name='user' where id=12;
+update usr set role_name='user' where id=13;
+update usr set role_name='user' where id=14;
+update usr set role_name='user' where id=15;
+update usr set role_name='user' where id=16;
+update usr set role_name='user' where id=17;
+update usr set role_name='user' where id=18;
+update usr set role_name='user' where id=19;
+update usr set role_name='user' where id=20;
+update usr set role_name='user' where id=21;
+update usr set role_name='user' where id=22;
+update usr set role_name='user' where id=23;
+alter table usr alter column role_name set not NULL;
+alter table usr add column login varchar(64);
+alter table usr add column password varchar(64);
+alter table usr add constraint FK_USR_ROLE foreign key (role_name) references
+role;
+create table permission (
+id SMALLSERIAL not null,
+primary key (id),
+name VARCHAR(30) not null);
+insert into permission (name) values
+('create'),
+('edit'),
+('view'),
+('delete');
+create table role_permission (
+role_name VARCHAR(20) not null,
+permission_id SMALLSERIAL not null
+);
+alter table role_permission add constraint FK_USR_ROLE foreign key (permission_id) references
+permission;
+alter table role_permission add constraint FK_USR_ROLE2 foreign key (role_name) references
+role;
+insert into role_permission (role_name, permission_id) values
+('administrator','1'),
+('administrator','2'),
+('administrator','3'),
+('administrator','4'),
+('editor','2'),
+('editor','3'),
+('user','3');
