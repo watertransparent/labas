@@ -22,6 +22,23 @@ insert into usr (first_name, middle_name, last_name, email) values
 ('Николай', 'Олегович', 'Вердык', 'verdik@my.example.com'),
 ('Никита', 'Сергеевич', 'Корыто', 'korito@my.example.com'),
 ('Сергей', 'Андреевич', 'Булышев', 'bulishev@my.example.com');
+insert into role (name) values
+('administrator'),
+('editor'),
+('user');
+insert into permission (name) values
+('create'),
+('edit'),
+('view'),
+('delete');
+insert into role_permission (role_name, permission_id) values
+('administrator','1'),
+('administrator','2'),
+('administrator','3'),
+('administrator','4'),
+('editor','2'),
+('editor','3'),
+('user','3');
 insert into usr (first_name, middle_name, last_name, e_mail, phone, birth_date, role_name) values
 ('Василий','Васильевич','Василенко','vasil@mail.ru','+7(978)706-53-43','2003-02-16 20:11:21','user'),
 ('Геннадий','Васильевич','Бузяев','gennod@mail.ru','+7(978)708-53-43','2002-03-25 12:11:52','user'),
@@ -33,3 +50,30 @@ insert into usr (first_name, middle_name, last_name, e_mail, phone, birth_date, 
 ('Святослав','Дмитриевич','Огр','ogr@mail.ru','+7(978)702-23-40','2001-04-13 23:12:23','user'),
 ('Ростислав','Андреевич','Устрица','ustrica@mail.ru','+7(978)701-13-13','2002-12-22 00:04:02','user'),
 ('Олег','Олегович','Стручок','struchok@mail.ru','+7(978)776-56-63','2003-11-21 06:12:26','user');
+insert into department (id, name) values
+('1','Бизнес-информатика'),
+('2','Компьютерная инженерия'),
+('3','Менеджмент'),
+('4','Туризм'),
+('5','Русская литература');
+insert into position (id, name) values
+('1','Администрация'),
+('2','Преподаватель'),
+('3','Студент');
+insert into groups (id, name, course) values
+('1','БИ-б-о 201','2'),
+('2','КИ-б-о 202','1'),
+('3','М-б-о 201','1'),
+('4','Т-б-о 202','4'),
+('5','РИ-б-о 201','4');
+insert into usr (first_name, middle_name, last_name, e_mail, phone, birth_date, role_name) values
+('Буряк','Бурякович','Буряков','buryk@mail.ru','+7(978)792-33-43','2003-03-09 21:11:11','user'),
+('Очередняра','Записной','Унылов','ocherednoy@mail.ru','+7(978)721-52-43','2002-04-25 12:12:12','user'),
+('Создатель','Десятков','Записной','ten@mail.ru','+7(978)722-82-43','2004-05-11 13:13:13','user'),
+('Никита','Валерьевич','Время','time@mail.ru','+7(978)111-11-11','2003-08-25 10:10:10','user'),
+('Виталий','Анатольевич','Строгий','strog@mail.ru','+7(978)777-56-66','1999-09-22 09:09:12','user'),
+('Харухи','Леонидовна','Судзумия','anime@mail.ru','+7(978)733-11-22','1999-07-04 22:11:16','user'),
+('Даниил','Даниилович','Данилевский','tripled@mail.ru','+7(978)723-45-67','1998-10-11 10:21:22','user'),
+('Сергей','Сергеевич','Стрыга','monster@mail.ru','+7(978)799-93-90','2001-05-12 23:11:13','user'),
+('Геральт','Из','Ривии','vedmak@mail.ru','+7(978)711-10-10','2002-10-20 00:02:02','user'),
+('Виктория','Анатольевна','Бойко','devochka@mail.ru','+7(978)701-01-00','2003-11-20 09:12:26','user');

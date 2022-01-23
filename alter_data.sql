@@ -49,14 +49,6 @@ update usr set birth_date='2007-11-04 21:18:08' where id=21;
 update usr set birth_date='2008-04-01 22:07:08' where id=22;
 update usr set birth_date='2008-05-02 23:04:08' where id=23;
 alter table usr ALTER COLUMN birth_date SET NOT NULL;
-create table role (
-name varchar(20) not null,
-primary key (name)
-);
-insert into role (name) values
-('administrator'),
-('editor'),
-('user');
 alter table usr add column role_name varchar(20);
 update usr set role_name='administrator' where id=1;
 update usr set role_name='administrator' where id=2;
@@ -86,28 +78,25 @@ alter table usr add column login varchar(64);
 alter table usr add column password varchar(64);
 alter table usr add constraint FK_USR_ROLE foreign key (role_name) references
 role;
-create table permission (
-id SMALLSERIAL not null,
-primary key (id),
-name VARCHAR(30) not null);
-insert into permission (name) values
-('create'),
-('edit'),
-('view'),
-('delete');
-create table role_permission (
-role_name VARCHAR(20) not null,
-permission_id SMALLSERIAL not null
-);
 alter table role_permission add constraint FK_USR_ROLE foreign key (permission_id) references
 permission;
 alter table role_permission add constraint FK_USR_ROLE2 foreign key (role_name) references
 role;
-insert into role_permission (role_name, permission_id) values
-('administrator','1'),
-('administrator','2'),
-('administrator','3'),
-('administrator','4'),
-('editor','2'),
-('editor','3'),
-('user','3');
+alter table university_member add constraint FK_DEPARTMENT_ID foreign key (department_id) references
+department;
+alter table university_member add constraint FK_POSITION_ID foreign key (position_id) references
+position;
+alter table university_member add constraint FK_USER_ID foreign key (user_id) references
+usr;
+alter table group_member add constraint FK_UNIVERSITY_MEMBER_ID foreign key (university_member_id) references
+university_member;
+alter table group_member add constraint FK_GROUP_ID foreign key (group_id) references
+groups;
+update university_member set position_id=1 where id<2;
+update university_member set position_id=2 where id>2;
+update university_member set position_id=3 where id>9;
+update group_member set group_id=1 where id>9;
+update group_member set group_id=2 where id>15;
+update group_member set group_id=3 where id>21;
+update group_member set group_id=4 where id>27;
+update group_member set group_id=5 where id>34;
