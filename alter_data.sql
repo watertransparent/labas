@@ -100,3 +100,4 @@ update group_member set group_id=2 where id>15;
 update group_member set group_id=3 where id>21;
 update group_member set group_id=4 where id>27;
 update group_member set group_id=5 where id>34;
+alter table address add constraint FK_address_tbl_1 foreign key (user_id) references usr;

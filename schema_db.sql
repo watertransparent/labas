@@ -47,3 +47,13 @@ id integer,
 name varchar(30),
 primary key (id)
 );
+create table address (
+id integer not null,
+user_id integer not null,
+zip_code varchar(30),
+city varchar(30),
+street varchar(30),
+building varchar(30),
+flat varchar(30),
+primary key(id)
+);
